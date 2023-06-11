@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./todoinput.component.css']
 })
 export class TodoinputComponent {
+  public todo = '';
 
 }
