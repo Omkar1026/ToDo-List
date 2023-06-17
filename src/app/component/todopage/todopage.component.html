@@ -1,5 +1,20 @@
 <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Add things ToDo" aria-label="Add things ToDo"
-        aria-describedby="button-addon2" [(ngModel)]="todo">
+    <input type="text" class="form-control" placeholder="Add things To Do" aria-label="Add things To Do"
+        aria-describedby="button-addon2" [(ngModel)]="todoInput">
     <button class="btn btn-primary" type="button" id="button-addon2" (click)="addToDo()">Add</button>
 </div>
+<div class="error">
+    <p *ngIf="inputempty">Input field is empty</p>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Things on List</th>
+        </tr>
+    </thead>
+    <tbody (click)="removeToDo(todo)" *ngFor="let todo of todos">
+        <tr>
+            <td>{{todo.content}}</td>
+        </tr>
+    </tbody>
+</table>

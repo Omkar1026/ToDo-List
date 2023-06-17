@@ -5,6 +5,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { TodopageComponent } from './component/todopage/todopage.component';
+import { todoReducer } from './state/todo.reducer';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { TodopageComponent } from './component/todopage/todopage.component';
   imports: [
     BrowserModule,
     FormsModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({ "todos": todoReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
