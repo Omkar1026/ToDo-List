@@ -1,3 +1,6 @@
+<div class="title">
+    <h2>Lets get things Done!</h2>
+</div>
 <div class="input-group mb-3">
     <input type="text" class="form-control" placeholder="Add things To Do" aria-label="Add things To Do"
         aria-describedby="button-addon2" [(ngModel)]="todoInput">
@@ -12,9 +15,10 @@
             <th scope="col">Things on List</th>
         </tr>
     </thead>
-    <tbody (click)="removeToDo(todo)" *ngFor="let todo of todos">
+    <tbody (click)="removeToDo(todo)" *ngFor=" let todo of todos$ | async ">
         <tr>
             <td>{{todo.content}}</td>
+            <button class="btn btn-success outline">Done</button>
         </tr>
     </tbody>
 </table>

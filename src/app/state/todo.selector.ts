@@ -8,5 +8,5 @@ import { ToDoState } from './todo.reducer';
 // );
 
 export const todoSelector = createSelector(createFeatureSelector("todos"),
-    (state: ToDoState) => state 
+    (state: ToDoState) => state.todos
 );
