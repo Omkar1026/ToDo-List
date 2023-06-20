@@ -15,10 +15,10 @@
             <th scope="col">Things on List</th>
         </tr>
     </thead>
-    <tbody (click)="removeToDo(todo)" *ngFor=" let todo of todos$ | async ">
+    <tbody *ngFor=" let todo of todos$ | async ">
         <tr>
             <td>{{todo.content}}</td>
-            <button class="btn btn-success outline">Done</button>
+            <button class="btn btn-success outline" (click)="removeToDo(todo)">Done</button>
         </tr>
     </tbody>
 </table>
